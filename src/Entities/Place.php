@@ -2,20 +2,27 @@
 
 namespace ArtARTs36\WeatherArchive\Entities;
 
+use ArtARTs36\WeatherArchive\Contracts\Driver;
+use ArtARTs36\WeatherArchive\Exceptions\PlaceNotSpecifiedForDriver;
+
 class Place extends Entity implements \ArtARTs36\WeatherArchive\Contracts\Place
 {
-    protected $identity;
+    protected $identities;
 
     /**
      * @codeCoverageIgnore
      */
-    public function __construct(string $identity)
+    public function __construct(array $identities)
     {
-        $this->identity = $identity;
+        $this->identities = $identities;
     }
 
-    public function getIdentity(): string
+    public function getIdentity(Driver $driver): string
     {
-        return $this->identity;
+        if (! isset($this->identities[get_class($driver)])) {
+            throw new PlaceNotSpecifiedForDriver($driver);
+        }
+
+        return $this->identities[get_class($driver)];
     }
 }

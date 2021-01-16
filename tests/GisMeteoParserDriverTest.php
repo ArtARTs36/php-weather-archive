@@ -5,8 +5,8 @@ namespace ArtARTs36\WeatherArchive\Tests;
 use ArtARTs36\WeatherArchive\Contracts\GisMeteoContentDecoder;
 use ArtARTs36\WeatherArchive\Contracts\Place;
 use ArtARTs36\WeatherArchive\Contracts\UrlCreator;
-use ArtARTs36\WeatherArchive\Drivers\GisMeteo\Decoders\Html\CyrillicDomDocument;
-use ArtARTs36\WeatherArchive\Drivers\GisMeteo\Decoders\Html\DecodeMachine;
+use ArtARTs36\WeatherArchive\Support\Html\CyrillicDomDocument;
+use ArtARTs36\WeatherArchive\Support\Html\DecodeMachine;
 use ArtARTs36\WeatherArchive\Drivers\GisMeteo\Decoders\Html\HtmlDecoder;
 use ArtARTs36\WeatherArchive\Drivers\GisMeteo\GisMeteoParserDriver;
 use ArtARTs36\WeatherArchive\Drivers\GisMeteo\GisMeteoUrlCreator;
@@ -46,7 +46,9 @@ final class GisMeteoParserDriverTest extends TestCase
 
         $result = $instance->getOnMonth(
             new \DateTime('2021-01-15'),
-            new \ArtARTs36\WeatherArchive\Entities\Place('')
+            new \ArtARTs36\WeatherArchive\Entities\Place([
+                GisMeteoParserDriver::class => '2011',
+            ])
         );
 
         foreach ($expected as $i => $part) {

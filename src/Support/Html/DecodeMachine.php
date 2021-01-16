@@ -1,10 +1,11 @@
 <?php
 
-namespace ArtARTs36\WeatherArchive\Drivers\GisMeteo\Decoders\Html;
+namespace ArtARTs36\WeatherArchive\Support\Html;
 
+use ArtARTs36\WeatherArchive\Contracts\HtmlDecodeMachine;
 use ArtARTs36\WeatherArchive\Contracts\TypeCasterInterface;
 
-class DecodeMachine
+class DecodeMachine implements HtmlDecodeMachine
 {
     protected $typeCaster;
 
