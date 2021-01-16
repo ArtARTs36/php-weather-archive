@@ -5,7 +5,9 @@ namespace ArtARTs36\WeatherArchive;
 use ArtARTs36\WeatherArchive\Contracts\ConcreteDriverFactory;
 use ArtARTs36\WeatherArchive\Contracts\Driver;
 use ArtARTs36\WeatherArchive\Drivers\GisMeteo\GisMeteoParserDriver;
+use ArtARTs36\WeatherArchive\Drivers\WorldWeather\WorldWeatherParserDriver;
 use ArtARTs36\WeatherArchive\Factories\GisMeteoParserDriverFactory;
+use ArtARTs36\WeatherArchive\Factories\WorldWeatherParserDriverFactory;
 use ArtARTs36\WeatherArchive\Support\Date;
 
 class DriverFactory
@@ -15,11 +17,12 @@ class DriverFactory
 
     protected $factories = [
         GisMeteoParserDriver::class => GisMeteoParserDriverFactory::class,
+        WorldWeatherParserDriver::class => WorldWeatherParserDriverFactory::class,
     ];
 
     protected $map = [
         self::TYPE_OLD_DATE => GisMeteoParserDriver::class,
-        self::TYPE_NEW_DATE => '',
+        self::TYPE_NEW_DATE => WorldWeatherParserDriver::class,
     ];
 
     public function byDate(\DateTimeInterface $date): Driver
