@@ -10,6 +10,7 @@ class TypeCaster implements TypeCasterInterface
     protected $map = [
         self::TYPE_INT => 'intval',
         self::TYPE_STRING => 'strval',
+        self::TYPE_FLOAT => 'floatval',
     ];
 
     public function cast($value, string $type)

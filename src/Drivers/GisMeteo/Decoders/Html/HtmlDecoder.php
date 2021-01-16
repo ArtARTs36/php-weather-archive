@@ -57,7 +57,7 @@ class HtmlDecoder implements GisMeteoContentDecoder
             0 => new DomNodeField('day', TypeCasterInterface::TYPE_INT),
             1 => new DomNodeField('temperature', TypeCasterInterface::TYPE_INT),
             2 => new DomNodeField('pressure', TypeCasterInterface::TYPE_INT),
-            3 => null,
+            3 => new CloudyDomNodeField('cloudy', TypeCasterInterface::TYPE_FLOAT),
             4 => null,
             5 => new DomNodeField('wind', TypeCasterInterface::TYPE_STRING),
         ];

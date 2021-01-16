@@ -15,4 +15,6 @@ class Day extends Entity
     public $pressure;
 
     public $wind;
+
+    public $cloudy;
 }

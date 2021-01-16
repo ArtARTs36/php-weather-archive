@@ -31,6 +31,7 @@ final class GisMeteoParserDriverTest extends TestCase
                 'temperature' => 27,
                 'pressure' => 746,
                 'wind' => 'ЮВ 1м/с',
+                'cloudy' => 25.0,
             ],
             [
                 'day' => 2,
@@ -39,6 +40,7 @@ final class GisMeteoParserDriverTest extends TestCase
                 'temperature' => 31,
                 'pressure' => 748,
                 'wind' => 'С 2м/с',
+                'cloudy' => 50.0,
             ],
         ];
 
