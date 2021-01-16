@@ -39,6 +39,6 @@ class WorldWeatherParserDriver implements Driver
 
     protected function getContent(\DateTimeInterface $time, Place $place): string
     {
-        return file_get_contents($this->urlCreator->create($time, $place));
+        return file_get_contents($this->urlCreator->create($time, $place->getIdentity($this)));
     }
 }

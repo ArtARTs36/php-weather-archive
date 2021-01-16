@@ -53,7 +53,7 @@ class GisMeteoParserDriver implements Driver
 
     protected function getContent(\DateTimeInterface $date, Place $place): string
     {
-        $content = file_get_contents($this->urlCreator->create($date, $place));
+        $content = file_get_contents($this->urlCreator->create($date, $place->getIdentity($this)));
 
         if (! $content) {
             throw new \RuntimeException();

@@ -4,5 +4,5 @@ namespace ArtARTs36\WeatherArchive\Contracts;
 
 interface Place
 {
-    public function getIdentity(): string;
+    public function getIdentity(Driver $driver): string;
 }

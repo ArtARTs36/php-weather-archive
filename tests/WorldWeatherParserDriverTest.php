@@ -19,7 +19,9 @@ final class WorldWeatherParserDriverTest extends TestCase
     {
         $driver = $this->createInstance(file_get_contents(__DIR__ . '/mock/world_weather_response.html'));
 
-        $days = $driver->getOnMonth(new \DateTime(), new \ArtARTs36\WeatherArchive\Entities\Place('russia/voronezh'));
+        $days = $driver->getOnMonth(new \DateTime(), new \ArtARTs36\WeatherArchive\Entities\Place([
+            WorldWeatherParserDriver::class => 'russia/voronezh',
+        ]));
 
         self::assertCount(30, $days);
     }

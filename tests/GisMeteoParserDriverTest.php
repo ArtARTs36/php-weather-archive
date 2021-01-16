@@ -46,7 +46,9 @@ final class GisMeteoParserDriverTest extends TestCase
 
         $result = $instance->getOnMonth(
             new \DateTime('2021-01-15'),
-            new \ArtARTs36\WeatherArchive\Entities\Place('')
+            new \ArtARTs36\WeatherArchive\Entities\Place([
+                GisMeteoParserDriver::class => '2011',
+            ])
         );
 
         foreach ($expected as $i => $part) {
