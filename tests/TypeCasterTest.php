@@ -8,6 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 final class TypeCasterTest extends TestCase
 {
+    /**
+     * @covers \ArtARTs36\WeatherArchive\Support\TypeCaster::cast
+     */
     public function testCast(): void
     {
         $caster = new TypeCaster();
@@ -37,6 +40,6 @@ final class TypeCasterTest extends TestCase
 
         self::expectException(TypeNotAvailableForCasting::class);
 
-        $res = $caster->cast('123', 'random_type');
+        $caster->cast('123', 'random_type');
     }
 }

@@ -8,7 +8,6 @@ use ArtARTs36\WeatherArchive\Contracts\Place;
 use ArtARTs36\WeatherArchive\Contracts\UrlCreator;
 use ArtARTs36\WeatherArchive\Drivers\WorldWeather\Decoders\Html\HtmlDecoder;
 use ArtARTs36\WeatherArchive\Entities\Day;
-use ArtARTs36\WeatherArchive\EntityCreator;
 
 class WorldWeatherParserDriver implements Driver
 {
@@ -25,15 +24,15 @@ class WorldWeatherParserDriver implements Driver
         $this->urlCreator = $urlCreator;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getOnMonth(\DateTimeInterface $date, Place $place): array
     {
-        return array_map(function (array $data) use ($date) {
-            /** @var Day $entity */
-            $entity = $this->entityCreator->create(Day::class, $data);
-            $entity->month = (int) $date->format('m');
-            $entity->year = (int) $date->format('Y');
-
-            return $entity;
+        return array_map(function (array $data) use ($date): Day {
+            return $this
+                ->entityCreator->create(Day::class, $data)
+                ->setMonthAndYear($date);
         }, $this->decoder->decode($this->getContent($date, $place)));
     }
 

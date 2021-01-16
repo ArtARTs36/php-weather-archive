@@ -27,6 +27,9 @@ class GisMeteoParserDriver implements Driver
         $this->entityCreator = $entityCreator;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getOnMonth(\DateTimeInterface $date, Place $place): array
     {
         $days = [];
@@ -40,15 +43,7 @@ class GisMeteoParserDriver implements Driver
 
     protected function createDay(array $data, \DateTimeInterface $date): Day
     {
-        return $this->setMissingDate($this->entityCreator->create(Day::class, $data), $date);
-    }
-
-    protected function setMissingDate(Day $day, \DateTimeInterface $date): Day
-    {
-        $day->month = (int) $date->format('m');
-        $day->year = (int) $date->format('Y');
-
-        return $day;
+        return $this->entityCreator->create(Day::class, $data)->setMonthAndYear($date);
     }
 
     protected function getContent(\DateTimeInterface $date, Place $place): string

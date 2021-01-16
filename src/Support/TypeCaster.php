@@ -13,6 +13,9 @@ class TypeCaster implements TypeCasterInterface
         self::TYPE_FLOAT => 'floatval',
     ];
 
+    /**
+     * @inheritDoc
+     */
     public function cast($value, string $type)
     {
         if (! array_key_exists($type, $this->map)) {

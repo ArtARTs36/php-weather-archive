@@ -24,4 +24,12 @@ class Day extends Entity
     {
         return new \DateTime("{$this->year}-{$this->month}-{$this->day}");
     }
+
+    public function setMonthAndYear(\DateTimeInterface $date): self
+    {
+        $this->month = (int) $date->format('m');
+        $this->year = (int) $date->format('Y');
+
+        return $this;
+    }
 }

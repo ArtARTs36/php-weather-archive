@@ -56,4 +56,18 @@ final class DayTest extends TestCase
 
         self::assertEquals("2020-01-01", $day->getDateTime()->format('Y-m-d'));
     }
+
+    /**
+     * @covers \ArtARTs36\WeatherArchive\Entities\Day::setMonthAndYear
+     */
+    public function testSetMonthAndYear(): void
+    {
+        $date = new \DateTime();
+        $day = new Day();
+
+        $day->setMonthAndYear($date);
+
+        self::assertEquals($date->format('Y'), $day->year);
+        self::assertEquals($date->format('m'), $day->month);
+    }
 }
