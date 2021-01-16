@@ -19,4 +19,9 @@ class Day extends Entity
     public $wind;
 
     public $cloudy;
+
+    public function getDateTime(): \DateTimeInterface
+    {
+        return new \DateTime("{$this->year}-{$this->month}-{$this->day}");
+    }
 }
