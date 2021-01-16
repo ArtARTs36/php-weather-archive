@@ -1,0 +1,26 @@
+{
+    "name": "artarts36/weather-archive",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ArtARTs36",
+            "email": "temicska99@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">= 7.1",
+        "phpunit/phpunit": "7.* | 8.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ArtARTs36\\WeatherArchive\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ArtARTs36\\WeatherArchive\\Tests\\": "tests"
+        }
+    }
+}
