@@ -3,10 +3,10 @@
 namespace ArtARTs36\WeatherArchive\Drivers\GisMeteo\Decoders\Html;
 
 use ArtARTs36\WeatherArchive\Contracts\GisMeteoContentDecoder;
+use ArtARTs36\WeatherArchive\Contracts\HtmlDecodeMachine;
 use ArtARTs36\WeatherArchive\Contracts\TypeCasterInterface;
 use ArtARTs36\WeatherArchive\Support\Html\CyrillicDomDocument;
 use ArtARTs36\WeatherArchive\Support\Html\DomNodeField;
-use ArtARTs36\WeatherArchive\Support\Html\DecodeMachine;
 
 class HtmlDecoder implements GisMeteoContentDecoder
 {
@@ -16,7 +16,7 @@ class HtmlDecoder implements GisMeteoContentDecoder
 
     protected $domDocument;
 
-    public function __construct(DecodeMachine $machine, CyrillicDomDocument $domDocument)
+    public function __construct(HtmlDecodeMachine $machine, CyrillicDomDocument $domDocument)
     {
         $this->columnsMap = $this->createColumnsMap();
         $this->machine = $machine;

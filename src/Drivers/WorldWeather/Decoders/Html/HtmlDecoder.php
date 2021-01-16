@@ -2,9 +2,9 @@
 
 namespace ArtARTs36\WeatherArchive\Drivers\WorldWeather\Decoders\Html;
 
+use ArtARTs36\WeatherArchive\Contracts\HtmlDecodeMachine;
 use ArtARTs36\WeatherArchive\Contracts\TypeCasterInterface;
 use ArtARTs36\WeatherArchive\Support\Html\CyrillicDomDocument;
-use ArtARTs36\WeatherArchive\Support\Html\DecodeMachine;
 use ArtARTs36\WeatherArchive\Support\Html\DomNodeField;
 
 class HtmlDecoder
@@ -15,7 +15,7 @@ class HtmlDecoder
 
     protected $decodeMachine;
 
-    public function __construct(DecodeMachine $machine, CyrillicDomDocument $domDocument)
+    public function __construct(HtmlDecodeMachine $machine, CyrillicDomDocument $domDocument)
     {
         $this->decodeMachine = $machine;
         $this->domDocument = $domDocument;
