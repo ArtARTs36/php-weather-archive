@@ -22,7 +22,7 @@ class HtmlDecoder
         $this->columnsMap = $this->createColumnsMap();
     }
 
-    public function decode(string $response)
+    public function decode(string $response): array
     {
         $this->domDocument->loadHTML($response);
 
