@@ -2,7 +2,7 @@
 
 namespace ArtARTs36\WeatherArchive\Tests;
 
-use ArtARTs36\WeatherArchive\Drivers\GisMeteo\Decoders\Html\TypeCaster;
+use ArtARTs36\WeatherArchive\Support\TypeCaster;
 use PHPUnit\Framework\TestCase;
 
 final class TypeCasterTest extends TestCase

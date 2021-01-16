@@ -17,8 +17,11 @@ class GisMeteoParserDriver implements Driver
 
     protected $entityCreator;
 
-    public function __construct(UrlCreator $urlCreator, GisMeteoContentDecoder $decoder, EntityCreatorInterface $entityCreator)
-    {
+    public function __construct(
+        UrlCreator $urlCreator,
+        GisMeteoContentDecoder $decoder,
+        EntityCreatorInterface $entityCreator
+    ) {
         $this->urlCreator = $urlCreator;
         $this->decoder = $decoder;
         $this->entityCreator = $entityCreator;

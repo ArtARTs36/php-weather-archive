@@ -64,8 +64,12 @@ final class GisMeteoParserDriverTest extends TestCase
         ) extends GisMeteoParserDriver {
             private $response;
 
-            public function __construct(string $response, UrlCreator $urlCreator, GisMeteoContentDecoder $decoder, EntityCreator $entityCreator)
-            {
+            public function __construct(
+                string $response,
+                UrlCreator $urlCreator,
+                GisMeteoContentDecoder $decoder,
+                EntityCreator $entityCreator
+            ) {
                 parent::__construct($urlCreator, $decoder, $entityCreator);
 
                 $this->response = $response;
