@@ -2,6 +2,7 @@
 
 namespace ArtARTs36\WeatherArchive\Tests;
 
+use ArtARTs36\WeatherArchive\Exceptions\TypeNotAvailableForCasting;
 use ArtARTs36\WeatherArchive\Support\TypeCaster;
 use PHPUnit\Framework\TestCase;
 
@@ -24,5 +25,18 @@ final class TypeCasterTest extends TestCase
 
         self::assertIsString($res);
         self::assertEquals('123', $res);
+
+        // 3. String -> float
+
+        $res = $caster->cast('123', TypeCaster::TYPE_FLOAT);
+
+        self::assertIsFloat($res);
+        self::assertEquals(123.0, $res);
+
+        // Not Available Type
+
+        self::expectException(TypeNotAvailableForCasting::class);
+
+        $res = $caster->cast('123', 'random_type');
     }
 }
