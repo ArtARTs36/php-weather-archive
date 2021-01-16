@@ -5,7 +5,7 @@ namespace ArtARTs36\WeatherArchive\Drivers\WorldWeather\Decoders\Html;
 use ArtARTs36\WeatherArchive\Contracts\TypeCasterInterface;
 use ArtARTs36\WeatherArchive\Drivers\GisMeteo\Decoders\Html\CyrillicDomDocument;
 use ArtARTs36\WeatherArchive\Drivers\GisMeteo\Decoders\Html\DecodeMachine;
-use ArtARTs36\WeatherArchive\Drivers\GisMeteo\Decoders\Html\DomNodeField;
+use ArtARTs36\WeatherArchive\Support\Html\DomNodeField;
 
 class HtmlDecoder
 {
