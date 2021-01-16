@@ -7,8 +7,6 @@ use ArtARTs36\WeatherArchive\Contracts\TypeCasterInterface;
 
 class HtmlDecoder implements GisMeteoContentDecoder
 {
-    protected const FIELD_IGNORE = 'ignore';
-
     protected $columnsMap = [];
 
     protected $machine;
