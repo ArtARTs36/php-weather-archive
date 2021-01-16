@@ -2,6 +2,7 @@
     "name": "artarts36/weather-archive",
     "type": "library",
     "license": "MIT",
+    "description": "Weather Archive",
     "authors": [
         {
             "name": "ArtARTs36",
