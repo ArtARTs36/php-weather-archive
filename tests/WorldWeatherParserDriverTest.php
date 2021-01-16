@@ -5,11 +5,11 @@ namespace ArtARTs36\WeatherArchive\Tests;
 use ArtARTs36\WeatherArchive\Contracts\Place;
 use ArtARTs36\WeatherArchive\Contracts\UrlCreator;
 use ArtARTs36\WeatherArchive\Drivers\GisMeteo\Decoders\Html\CyrillicDomDocument;
-use ArtARTs36\WeatherArchive\Drivers\GisMeteo\Decoders\Html\DecodeMachine;
 use ArtARTs36\WeatherArchive\Drivers\WorldWeather\Decoders\Html\HtmlDecoder;
 use ArtARTs36\WeatherArchive\Drivers\WorldWeather\WorldWeatherParserDriver;
 use ArtARTs36\WeatherArchive\Drivers\WorldWeather\WorldWeatherUrlCreator;
 use ArtARTs36\WeatherArchive\EntityCreator;
+use ArtARTs36\WeatherArchive\Support\Html\DecodeMachine;
 use ArtARTs36\WeatherArchive\Support\TypeCaster;
 use PHPUnit\Framework\TestCase;
 
