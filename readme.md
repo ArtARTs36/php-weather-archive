@@ -2,6 +2,11 @@
 
 ---
 
+![PHP Composer](https://github.com/ArtARTs36/php-weather-archive/workflows/Testing/badge.svg?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+---
+
 ### 1. Get weather by old Month (for Gismeteo, Voronezh)
 
 ```php
